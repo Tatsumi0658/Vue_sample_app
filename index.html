@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset = "UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>vue.js使ってみた</title>
+    <link rel = "stylesheet" href="sample.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id ="app">
+      名前：<input v-model="name" />
+      コース：<input v-model="course" />
+      受講期：<input v-model="time" />
+      <button type="button" id="add_button" v-on:click="add" />入力した値を追加する</button>
+      <ul>
+        <li v-for="(item, index) in list" v-bind:key="item.id">
+          ID:{{ item.id }}&nbsp;/&nbsp;
+          名前：{{ item.name }}&nbsp;/&nbsp;
+          コース：{{ item.course }}&nbsp;/&nbsp;
+          受講期：{{ item.time }}
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script type="text/javascript" src="sample.js"></script>
+</html>
